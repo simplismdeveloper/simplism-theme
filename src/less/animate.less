@@ -1,0 +1,8 @@
+.sd-animate{
+  //display: block; //이건 위험해 보여서 주석화, 다른 모듈에서 터진다면 수정되야함.
+  overflow: hidden;
+  visibility: visible;
+  @transition: transform .3s ease-out, height .3s ease-out;
+  .transition(@transition);
+  .hardware-acceleration();
+}

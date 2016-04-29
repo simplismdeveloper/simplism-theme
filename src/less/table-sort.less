@@ -1,0 +1,17 @@
+*[sd-table-sort-field]{
+  &:after{
+    .fa();
+
+    content: @fa-var-sort;
+    float: right;
+    line-height: 1.5em;
+  }
+}
+
+.sd-table-sort-asc:after{
+  content: @fa-var-sort-down;
+}
+
+.sd-table-sort-desc:after{
+  content: @fa-var-sort-up;
+}

@@ -1,0 +1,46 @@
+.sd-toast{
+  z-index: @z-toast;
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  pointer-events: none;
+
+  .transition(transform .15s ease-in-out);
+  .transform(translateY(-150%));
+
+  &.on{
+    .transform(none);
+  }
+
+  > .sd-toast-block{
+    text-align: left;
+    color: #fff;
+    display: inline-block;
+    background: rgba(0,0,0,.9);
+    padding: @padding-sm;
+    .border-radius(10px);
+
+    .box-shadow(0 0 10px rgba(0,0,0,.3));
+  }
+}
+
+
+.sd-toast-variant(@bg){
+  background: rgba(red(@bg), green(@bg), blue(@bg), .9);
+}
+
+.sd-toast-default{ > .sd-toast-block { .sd-toast-variant(black) }}
+.sd-toast-info{ > .sd-toast-block { .sd-toast-variant(@brand-info) }}
+.sd-toast-success{ > .sd-toast-block { .sd-toast-variant(@brand-success) }}
+.sd-toast-warning{ > .sd-toast-block { .sd-toast-variant(@brand-warning) }}
+.sd-toast-danger{ > .sd-toast-block { .sd-toast-variant(@brand-danger) }}
+
+@media (max-width: @width-mobile){
+  .sd-toast {
+    top: auto;
+    bottom: 20px;
+    .transform(translateY(150%));
+  }
+}

@@ -1,0 +1,22 @@
+sd-container{
+  display: block;
+  width:100%;
+  height: 100%;
+  padding-top: @topbar-height;
+  padding-left: @sidebar-width;
+}
+
+@padding-body: 20px;
+
+sd-body{
+  display: block;
+  padding: @padding-body;
+
+  margin-bottom: @margin-bottom-lg;
+}
+
+@media (max-width: @screen-mobile-max){
+  sd-container{
+    padding-left: 0;
+  }
+}

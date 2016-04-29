@@ -1,0 +1,128 @@
+.form-inline{
+  @media (min-width: @screen-tablet-min) {
+    padding: @padding-base;
+
+    .form-group,
+    .form-control,
+    .sd-checkbox,
+    .sd-radio,
+    sd-textbox {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+      margin-bottom: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .control-label {
+      display: inline-block;
+      margin-bottom: 0;
+      padding: @padding-base;
+    }
+
+    sd-textbox,
+    .form-control {
+      width: 150px;
+    }
+
+    .sd-checkbox,
+    .sd-radio {
+      padding: @padding-base-v 0;
+    }
+  }
+}
+
+@media (max-width: @screen-mobile-max) {
+  .form-inline-filter {
+    /*z-index: @z-filter;
+    position: fixed;
+    top: @topbar-height;
+    left: 0;
+    right: 0;*/
+    padding: 0;
+
+    .form-group {
+      display: table;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      border-bottom: 1px solid rgba(255, 255, 255, .05);
+
+      .control-label {
+        display: table-cell;
+        border: none;
+        margin-bottom: 0;
+        width: 120px;
+        text-align: right;
+        padding: @padding-base;
+      }
+
+      .form-control {
+        display: table-cell;
+        border: none;
+        margin-bottom: 0;
+        .box-shadow(none);
+      }
+    }
+
+    .btn {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.form-horizontal{
+  vertical-align: top;
+
+  .form-group{
+    vertical-align: top;
+
+    .control-label{
+      display: inline-block;
+      vertical-align: top;
+      border: 1px solid transparent;
+      text-align: right;
+      padding: @padding-base;
+      width: 120px;
+    }
+
+    .form-control,
+    .sd-checkbox,
+    .sd-radio{
+      display: inline-block;
+      vertical-align: top;
+      width: 220px;
+    }
+
+    .form-group-content{
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .btn{
+      vertical-align: top;
+    }
+
+
+    @media (max-width: @screen-mobile-max){
+      .control-label{
+        display: block;
+        width: 100%;
+        border: none;
+        text-align: left;
+        padding: 0;
+      }
+      .form-control,
+      .sd-checkbox,
+      .sd-radio{
+        display: block;
+        width: 100%;
+        margin-bottom: 2px;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+sd-top-menu{
+  display: block;
+  position: fixed;
+  top: 0;
+  right: @padding-base-v;
+  background: @gray-darker;
+  .box-shadow(0 5px 10px rgba(0,0,0,.3));
+  min-width: 150px;
+
+  .transition(all .1s ease-in-out) !important;
+  .transform-origin(top right);
+  .transform(scale(.5,.5));
+  opacity: 0;
+  visibility: hidden;
+
+  a{
+    line-height: @line-height;
+  }
+
+  &.on{
+    .transform(none);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.sd-top-menu-backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

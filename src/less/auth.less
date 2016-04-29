@@ -1,0 +1,71 @@
+.sd-auth{
+  padding-top: 100px;
+
+  .page-header{
+    padding: 0 0 @margin-bottom-sm;
+    margin-bottom: @margin-bottom;
+    background: transparent;
+    border-bottom: 1px solid @gray-darker;
+  }
+}
+
+.sd-auth-header{
+  color: #fff;
+  margin-bottom: @margin-bottom;
+  padding-bottom: 5px;
+
+  small{
+    color: @gray-lighter;
+    font-size: @font-size;
+    padding-left: 10px;
+  }
+}
+
+.sd-auth-header-btn{
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+  color: @text-color;
+  height: 31px;
+  width: 31px;
+  text-align: center;
+  line-height: 31px;
+
+  &:hover{
+    color: #fff;
+  }
+}
+
+.sd-auth-container{
+  width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: @screen-mobile-max){
+  .sd-auth{
+    padding-top: 10px;
+  }
+
+  .sd-auth-container {
+    width: 100%;
+    padding: @padding-lg;
+  }
+}
+
+.sd-auth-container-sm{
+  width: 350px;
+  margin: 0 auto;
+}
+
+@media (max-width: @width-mobile){
+  .sd-auth{
+    padding-top: 10px;
+  }
+
+  .sd-auth-container-sm {
+    width: 100%;
+    padding: @padding-lg;
+  }
+}

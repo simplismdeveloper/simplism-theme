@@ -1,0 +1,133 @@
+sd-sidebar{
+  position: fixed;
+  z-index: @z-sidebar;
+  display: block;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: @sidebar-width;
+
+  background: @sidebar-bg;
+  color: @sidebar-color;
+
+  overflow: auto;
+  .user-select(none);
+
+  &::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+.sd-sidebar-brand{
+  display: block;
+  padding: @padding-base;
+  color: #fff;
+  font-weight: bold;
+}
+
+.sd-sidebar-box{
+  background: @gray-darkest;
+  padding: @padding-base;
+  //margin-bottom: @margin-bottom;
+}
+
+.sd-sidebar-title{
+  opacity: .7;
+  padding: @padding-base;
+  //border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+sd-sidebar-menu{
+  display: block;
+  margin-bottom: @margin-bottom;
+}
+
+sd-sidebar-menu-item > a{
+  display: block;
+  width: 100%;
+  padding: @padding-lg;
+  cursor: pointer;
+  //border-bottom: 1px solid rgba(255,255,255,.05);
+  color: @sidebar-color;
+
+  &:hover{
+    color: #fff;
+    background: rgba(0,0,0,.2);
+  }
+
+  > .fa-angle-left{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    text-align: center;
+    line-height: 41px;
+    width: 41px;
+    .transform(rotate(0deg));
+    .transition(all .1s ease-out);
+  }
+}
+
+sd-sidebar-menu-item > sd-sidebar-menu{
+  background: rgba(0,0,0,.3);
+  margin-bottom: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+sd-sidebar-menu-item.on > a {
+  > .fa-angle-left{
+    .transform(rotate(-90deg));
+  }
+}
+sd-sidebar-menu-item.on > sd-sidebar-menu{
+  display: block;
+}
+
+sd-sidebar-menu-item sd-sidebar-menu-item > a{
+  text-indent: 20px;
+  padding: @padding-base;
+
+  .fa-fw{
+    text-indent: 0;
+  }
+  > .fa-angle-left{
+    text-indent: 0;
+    line-height: 38px;
+    width: 38px;
+  }
+}
+
+
+@media (max-width: @screen-mobile-max){
+  sd-sidebar{
+    .hardware-acceleration();
+    .transform(translate3d(-100%, 0, 0));
+    .transition(all .2s ease-in-out);
+  }
+
+  .sd-sidebar-backdrop{
+    z-index: @z-sidebar;
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    opacity: 0;
+    visibility: hidden;
+
+    .transition(all .2s ease-in-out);
+  }
+
+  sd-container.toggle{
+    sd-sidebar{
+      .transform(none);
+    }
+    .sd-sidebar-backdrop{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

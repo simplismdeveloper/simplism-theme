@@ -1,0 +1,51 @@
+@topbar-height: 50px;
+@topbar-bg: #111;
+@topbar-color: @text-color;
+
+sd-topbar{
+  position: fixed;
+  z-index: @z-topbar;
+
+  display: block;
+  top: 0;
+  left: @sidebar-width;
+  right: 0;
+
+  height: @topbar-height;
+  line-height: @topbar-height;
+
+  background: @topbar-bg;
+  color: @topbar-color;
+
+  padding: 0 @padding-lg-h;
+}
+
+.sd-topbar-btn{
+  display: block;
+  float: left;
+  text-align: center;
+  padding: 0 @padding-lg-h;
+  cursor: pointer;
+  color: @text-color;
+}
+
+.sd-topbar-brand{
+  display: block;
+  float: left;
+  font-size: @font-size-lg;
+  font-weight: bold;
+  padding: 0 @padding-base-h;
+  color: #fff;
+}
+
+.sd-topbar-right{
+  display: block;
+  float: right !important;
+}
+
+@media (max-width: @screen-mobile-max){
+  sd-topbar{
+    left: 0;
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,20 @@
+.control-label{
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  content: ' ';
+}
+
+.form-group{
+  margin-bottom: @margin-bottom;
+
+  @media (max-width: @screen-mobile-max){
+    .btn,
+    .form-control,
+    .form-group-content{
+      display: block;
+      width: 100%;
+      margin-bottom: 2px;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+sd-document{
+  display: block;
+  padding: @padding-body;
+  font-size: @font-size-sm;
+
+
+  .form-control-inset{
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  html, body,
+  input, textarea, button, select{
+    font-size: @font-size-sm;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6{
+    color: #fff;
+  }
+
+  h1, .h1{ font-size: @font-size-h2; }
+  h2, .h2{ font-size: @font-size-h3; }
+  h3, .h3{ font-size: @font-size-h4; }
+  h4, .h4{ font-size: @font-size-h5; }
+  h5, .h5{ font-size: @font-size-h6; }
+  h6, .h6{ font-size: 11px; }
+
+  h3{
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+  }
+
+  p{
+    margin-bottom: @margin-bottom;
+  }
+
+  .sd-document-part{
+    margin-bottom: @margin-bottom-lg;
+  }
+
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: @margin-bottom;
+
+    > thead > tr > th,
+    > thead > tr > td,
+    > tbody > tr > th,
+    > tbody > tr > td,
+    > tfoot > tr > th,
+    > tfoot > tr > td{
+      border: 1px solid @gray-dark;
+      padding: @padding-sm;
+      text-align: left;
+      vertical-align: top;
+
+      &.desc{
+        font-style: italic;
+        color: @gray-light;
+
+        > .form-control-inset{
+          font-style: italic;
+          color: @gray-light;
+        }
+      }
+    }
+
+    > thead > tr > th,
+    > tbody > tr > th{
+      background: #111;
+      color: #fff;
+    }
+
+    > tfoot > tr > td{
+      padding: 0;
+    }
+  }
+}
