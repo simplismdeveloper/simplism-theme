@@ -1,21 +1,21 @@
 {
   "name": "simplism-theme",
   "version": "0.0.1",
-  "devDependencies": {
+  "dependency": {
     "jquery": "^2.2.3",
     "angular": "^1.5.5",
     "angular-i18n": "^1.5.5",
     "angular-ui-router": "^0.2.18",
     "angular-sanitize": "^1.5.5",
     "querystring": "^3.46.1",
-    "font-awesome": "^4.6.1",
     "highlightjs": "^9.2.0",
-    "lodash": "^4.11.2"
+    "lodash": "^4.11.2",
+    "font-awesome": "^4.6.1"
   },
   "ignore": [
-    ".gitignore",
     "node_modules",
     "bower_components",
+    ".gitignore",
     "gulpfiles.js",
     "package.json"
   ]

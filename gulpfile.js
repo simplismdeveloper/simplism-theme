@@ -21,8 +21,8 @@ var paths = {
     },
     src: {
         "js": [
-            path.join(srcDir, '/js/module.js'),
-            path.join(srcDir, '/js/**/*.js')
+            path.join(srcDir, '/module.js'),
+            path.join(srcDir, '/**/*.js')
         ],
         "less": [
             path.join(srcDir, '/less/simplism.less'),
@@ -51,22 +51,34 @@ gulp.task('bower_copy', ['bower_install'], function(){
     return gulp.src(paths.bower.font, { nodir: true })
         .pipe(gulp.dest(paths.dest.font));
 });
+/*
+ gulp.task('uglify', ['bower_install'], function(cb){
+ pump([
+ gulp.src(mainBowerFiles({
+ "overrides": {
+ "angular-i18n": {
+ main: "angular-locale_ko-kr.js"
+ },
+ "font-awesome": {
+ ignore: true
+ },
+ "highlightjs": {
+ main: "highlight.pack.js"
+ }
+ }
+ }).concat(paths.src.js)),
+ sourcemaps.init(),
+ concat(paths.output.js),
+ ngAnnotate(),
+ process.env['NODE_ENV'] == 'development' ? uglify({compress: false, mangle: false}) : uglify(),
+ sourcemaps.write(),
+ gulp.dest(paths.dest.js)
+ ], cb);
+ });*/
 
-gulp.task('uglify', ['bower_install'], function(cb){
+gulp.task('uglify', function(cb){
     pump([
-        gulp.src(mainBowerFiles({
-            "overrides": {
-                "angular-i18n": {
-                    main: "angular-locale_ko-kr.js"
-                },
-                "font-awesome": {
-                    ignore: true
-                },
-                "highlightjs": {
-                    main: "highlight.pack.js"
-                }
-            }
-        }).concat(paths.src.js)),
+        gulp.src(paths.src.js),
         sourcemaps.init(),
         concat(paths.output.js),
         ngAnnotate(),
@@ -95,6 +107,6 @@ gulp.task('less', ['bower_install'], function(cb){
     ], cb);
 });
 
-gulp.task('default', ['bower_install', 'bower_copy', 'public', 'less', 'uglify']);
+gulp.task('default', ['bower_install', /*'bower_copy', 'public', 'less',*/ 'uglify']);
 
 module.exports = gulp;
