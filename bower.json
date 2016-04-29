@@ -13,10 +13,7 @@
     "font-awesome": "^4.6.1"
   },
   "ignore": [
-    "node_modules",
     "bower_components",
-    ".gitignore",
-    "gulpfiles.js",
-    "package.json"
+    ".gitignore"
   ]
 }
